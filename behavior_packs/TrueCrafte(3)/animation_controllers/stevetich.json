@@ -1,0 +1,81 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.zombiecommon": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function zombiecommon",
+			"/execute @s[tag=has.target] ~~~ function zombietarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function zombiecommon",
+			"/execute @s[tag=has.target] ~~~ function zombietarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.pigman": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function zombiecommon",
+			"/execute @s[tag=has.target] ~~~ function pigmantarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function zombiecommon",
+			"/execute @s[tag=has.target] ~~~ function pigmantarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.zombietarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    }
+  }
+}

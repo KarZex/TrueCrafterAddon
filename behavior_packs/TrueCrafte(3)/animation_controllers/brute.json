@@ -1,0 +1,79 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.brute": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function brute",
+			"/execute @s[tag=has.target] ~~~ function brutetarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function brute",
+			"/execute @s[tag=has.target] ~~~ function brutetarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.health": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.health <= 25"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "query.health > 25"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add low"
+          ],
+          "on_exit": [
+			"/tag @s remove low"
+          ]
+        }
+      }
+    },
+    "controller.animation.brutetarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target && !query.is_riding"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    }
+  }
+}

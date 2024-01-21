@@ -1,0 +1,34 @@
+
+        "hp2": "textures/hp/hp2",
+        "hp1": "textures/hp/hp1",
+        "hp0": "textures/hp/hp1"
+      },
+      "geometry": {
+        "default": "geometry.horse.v2",
+        "hp": "geometry.health_bar",
+        "dmg": "geometry.dmg"
+      },
+      "animations": {
+        "setup": "animation.horse.v2.setup",
+        "baby_transform": "animation.horse.v2.baby_transform",
+        "walk": "animation.horse.v2.walk",
+        "eat": "animation.horse.v2.eat",
+        "stand": "animation.horse.v2.stand",
+        "tail": "animation.horse.v2.tail",
+        "dmg": "controller.animation.damage.root",
+        "hp": "animation.health_donkey"
+      },
+      "scripts": {
+        "scale": "0.87",
+        "initialize": [
+          "variable.eat_anim = 0.0;",
+          "variable.mouth_anim = 0.0;",
+          "variable.hp = query.health;"
+        ],
+        "pre_animation": [
+          "variable.eat_anim = math.clamp(variable.eat_anim + (query.is_grazing ? ((1.0 - variable.eat_anim) * 0.4 + 0.05) : -variable.eat_anim * 0.4 - 0.05) * query.delta_time * 20.0, 0.0, 1.0);",
+          "variable.mouth_anim = math.clamp(variable.mouth_anim + (variable.open_mouth ? ((1.0 - variable.mouth_anim) * 0.7 + 0.05) : -variable.mouth_anim * 0.7 - 0.05) * query.delta_time * 20.0, 0.0, 1.0);",
+          "variable.head_x_rot = query.target_x_rotation + (query.modified_move_speed > 0.2 ? (math.cos(query.modified_distance_moved * 11.46) * 11.46 * query.modified_move_speed + query.modified_move_speed * 11.46) : 0.0);",
+          "variable.inverse_max_stand_eat = (1.0 - math.max(variable.stand_anim, variable.eat_anim));",
+          "variable.base_head_angle = variable.inverse_max_stand_eat * (30.0 + variable.head_x_rot + variable.mouth_anim  * math.sin((query.life_time * 20.0 + query.frame_alpha) * 57.3) * 2.86);",
+          "v

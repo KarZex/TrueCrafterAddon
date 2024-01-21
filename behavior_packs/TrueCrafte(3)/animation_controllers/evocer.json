@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.evocer": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function evocer",
+			"/execute @s[tag=has.target] ~~~ function evocertarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function evocer",
+			"/execute @s[tag=has.target] ~~~ function evocertarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.evocertarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target && !query.is_riding"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    }
+  }
+}

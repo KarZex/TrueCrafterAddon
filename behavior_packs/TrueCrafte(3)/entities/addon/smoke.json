@@ -1,0 +1,141 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "zex:spider_b",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.spider_b"
+	  }
+    },
+	"component_groups": {
+      "A": {
+      "minecraft:type_family": { "family": [ "inanimate", "spider_b.A" ]}
+      },
+      "B": {
+       "minecraft:type_family": { "family": [ "inanimate", "spider_b.B" ]}
+      },
+      "C": {
+        "minecraft:type_family": { "family": [ "inanimate", "spider_b.C" ]}
+      },
+      "D": {
+        "minecraft:type_family": { "family": [ "inanimate", "spider_b.D" ]}
+      },
+      "E": {
+       "minecraft:type_family": { "family": [ "inanimate", "spider_b.E" ]}
+      },
+      "F": {
+        "minecraft:type_family": { "family": [ "inanimate", "spider_b.F" ]}
+      },
+      "G": {
+      }
+    },
+    "components": {
+	  "minecraft:explode": {
+          "fuse_length": 10,
+          "fuse_lit": true,
+          "power": 0,
+          "causes_fire": true,
+          "destroy_affected_by_griefing": true
+        },
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:health": {
+        "value": 9999,
+        "max": 9999
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+		{
+          "cause": "all",
+          "deals_damage": false
+        }
+	   ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/empty.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+
+	  
+	  
+      "A": {
+        "add": {
+          "component_groups": [
+            "A"
+          ]
+        }
+      },
+      "B": {
+        "add": {
+          "component_groups": [
+            "B"
+          ]
+        }
+      },
+      "C": {
+        "add": {
+          "component_groups": [
+            "C"
+          ]
+        }
+      },
+      "D": {
+        "add": {
+          "component_groups": [
+            "D"
+          ]
+        }
+      },
+      "E": {
+        "add": {
+          "component_groups": [
+            "E"
+          ]
+        }
+      },
+      "F": {
+        "add": {
+          "component_groups": [
+            "F"
+          ]
+        }
+      },
+      "G": {
+        "add": {
+          "component_groups": [
+            "G"
+          ]
+        }
+      }
+    }
+  }
+}

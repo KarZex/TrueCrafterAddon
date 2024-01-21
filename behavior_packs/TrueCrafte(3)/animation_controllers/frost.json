@@ -1,0 +1,79 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.frost": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function frost",
+			"/execute @s[tag=has.target] ~~~ function frosttarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function frost",
+			"/execute @s[tag=has.target] ~~~ function frosttarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.frosttarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target && !query.is_riding"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    },
+    "controller.animation.frostball": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function frostball"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function frostball"
+          ]
+        }
+      }
+    }
+  }
+}

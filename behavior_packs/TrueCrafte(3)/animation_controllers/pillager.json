@@ -1,0 +1,55 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.pillagercommon": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function pillager",
+			"/execute @s[tag=has.target] ~~~ function pillagertarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function pillager",
+			"/execute @s[tag=has.target] ~~~ function pillagertarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.pillagertarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target && !query.is_riding"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    }
+  }
+}

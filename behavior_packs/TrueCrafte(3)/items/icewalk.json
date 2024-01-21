@@ -1,0 +1,26 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "zex:icewalk"
+    },
+
+    "components": {
+      "minecraft:max_stack_size": 1,
+			"minecraft:durability": {
+				"max_durability": 9999
+			},
+      "minecraft:enchantable": {
+        "value": 10,
+        "slot": "armor_feet"
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.feet"
+      },
+ 	  "minecraft:icon": {
+			"texture": "miss"
+	   },
+	"minecraft:render_offsets": "boots"
+    }
+  }
+}

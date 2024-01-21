@@ -1,0 +1,177 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.spider": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function spider",
+			"/execute @s[tag=has.target] ~~~ function spidertarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function spider",
+			"/execute @s[tag=has.target] ~~~ function spidertarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.spidertarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    },
+    "controller.animation.cspider": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function spider",
+			"/execute @s[tag=has.target] ~~~ function cspidertarget"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function spider",
+			"/execute @s[tag=has.target] ~~~ function cspidertarget"
+          ]
+        }
+      }
+    },
+    "controller.animation.cspidertarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    },
+    "controller.animation.spider_b": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function spider_b"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function spider_b"
+          ]
+        }
+      }
+    },
+    "controller.animation.spider_b1": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function spider_b1"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function spider_b1"
+          ]
+        }
+      }
+    },
+    "controller.animation.spider_b2": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/function spider_b2"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function spider_b2"
+          ]
+        }
+      }
+    }
+  }
+}

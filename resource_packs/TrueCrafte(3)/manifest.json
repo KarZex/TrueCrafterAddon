@@ -1,0 +1,19 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "ちゅずめさんのデータパック真のクラフターモード
+を統合版で再現したアドオンです。",
+    "name": "§g§lTrue Crafter Mode",
+    "uuid": "8986ea80-dbe0-11ec-b325-5f7b4b72690f",
+    "version": [0, 0, 1]
+  },
+  "modules": [
+    {
+      "description": "ちゅずめさんのデータパック真のクラフターモード
+を統合版で再現したアドオンです。",
+      "type": "resources",
+      "uuid": "89875fb0-dbe0-11ec-d3e6-9127c302b151",
+      "version": [0, 0, 1]
+    }
+  ]
+}

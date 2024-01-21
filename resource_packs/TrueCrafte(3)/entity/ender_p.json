@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "zex:ender_p",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+			"default": "textures/endframe_eye"
+			},
+			"geometry": {
+			"default": "geometry.ender_p"
+			},
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.humanoid.look_at_target.default.v1.0"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

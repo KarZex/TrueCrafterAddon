@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "zex:spider_b2",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball",
+      "scripts": {
+	    "animate": [ "walk" ]
+	  },
+	  "animations": {
+	    "walk": "controller.animation.spider_b2"
+		}
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.31,
+    "height": 0.31
+   },
+   "minecraft:explode": {
+        "fuse_length": 5.1,
+        "fuse_lit": true,
+        "power": 0,
+        "destroy_affected_by_griefing": true
+    },
+   "minecraft:nameable": {
+   },
+   "minecraft:physics": {
+   },
+   "minecraft:pushable": {
+    "is_pushable": true,
+    "is_pushable_by_piston": true
+   },
+   "minecraft:conditional_bandwidth_optimization": {
+    "default_values": {
+      "max_optimized_distance": 80.0,
+      "max_dropped_ticks": 7,
+      "use_motion_prediction_hints": true
+    }
+  }
+  },    
+  "events": {
+      "elite": {
+	  }
+    }
+ }
+}

@@ -1,0 +1,81 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.piglin": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function piglin",
+			"/execute @s[tag=has.target,tag=rangedu] ~~~ function piglintargetr",
+			"/execute @s[tag=has.target,tag=meleeu] ~~~ function piglintargetm"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+			"/function piglin",
+			"/execute @s[tag=has.target,tag=rangedu] ~~~ function piglintargetr",
+			"/execute @s[tag=has.target,tag=meleeu] ~~~ function piglintargetm"
+          ]
+        }
+      }
+    },
+    "controller.animation.health": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.health <= 10"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "query.health > 10"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add low"
+          ],
+          "on_exit": [
+			"/tag @s remove low"
+          ]
+        }
+      }
+    },
+    "controller.animation.piglintarget": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "target": "query.has_target && !query.is_riding"
+            }
+          ]
+        },
+        "target": {
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            }
+          ],
+          "on_entry": [
+			"/tag @s add has.target"
+          ],
+          "on_exit": [
+			"/tag @s remove has.target"
+          ]
+        }
+      }
+    }
+  }
+}

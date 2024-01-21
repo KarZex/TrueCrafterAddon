@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "zex:spider_b",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+			"default": "textures/spider_b"
+			},
+			"geometry": {
+			"default": "geometry.spider_b"
+			},
+			"scripts": {
+				"animate": [ 
+					"float"
+				]
+			},
+			"animations": {
+				"float": "animation.spider_b.stone"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}
