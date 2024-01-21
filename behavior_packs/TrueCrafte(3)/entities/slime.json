@@ -21,13 +21,13 @@
 		}
       },
 	  
-      "minecraft:slime_ultra": {
+      "minecraft:slime_superlarge": {
         "minecraft:variant": {
-          "value": 6
+          "value": 4
         },
-		"minecraft:scale": {
-			"value": 0.7
-		},
+        "minecraft:scale": {
+          "value": 1.2
+        },
         "minecraft:collision_box": {
           "width": 2.55,
           "height": 2.55
@@ -48,14 +48,14 @@
         "minecraft:variant": {
           "value": 4
         },
-		"minecraft:scale": {
-			"value": 0.7
-		},
-		"minecraft:timer": {
-		  "looping": true,
-		  "time": 10,
-		  "time_down_event": { "event": "become_ultra" }
-		},
+        "minecraft:scale": {
+          "value": 0.7
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 5,
+          "time_down_event": { "event": "become_superlarge" }
+        },
         "minecraft:collision_box": {
           "width": 2.08,
           "height": 2.08
@@ -73,15 +73,43 @@
       },
 	  
 
+      "minecraft:slime_supermedium": {
+        "minecraft:variant": {
+          "value": 2
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 5,
+          "time_down_event": { "event": "become_large" }
+        },
+        "minecraft:collision_box": {
+          "width": 1.04,
+          "height": 1.04
+        },
+        "minecraft:health": {
+          "value": 4,
+          "max": 4
+        },
+        "minecraft:movement": {
+          "value": 0.4
+        },
+        "minecraft:attack": {
+          "damage": 2
+        }
+      },
+
       "minecraft:slime_medium": {
         "minecraft:variant": {
           "value": 2
         },
-		"minecraft:timer": {
-		  "looping": true,
-		  "time": 10,
-		  "time_down_event": { "event": "become_large" }
-		},
+        "minecraft:timer": {
+          "looping": true,
+          "time": 5,
+          "time_down_event": { "event": "become_supermedium" }
+        },
+        "minecraft:scale": {
+          "value": 0.7
+        },
         "minecraft:collision_box": {
           "width": 1.04,
           "height": 1.04
@@ -275,6 +303,14 @@
           ]
         }
       },
+      "spawn_supermedium": {
+        "add": {
+          "component_groups": [
+            "minecraft:slime_supermedium",
+            "minecraft:slime_calm"
+          ]
+        }
+      },
       "spawn_large": {
         "add": {
           "component_groups": [
@@ -283,32 +319,42 @@
           ]
         }
       },
-      "spawn_ultra": {
+      "spawn_superlaege": {
         "add": {
           "component_groups": [
-            "minecraft:slime_ultra",
+            "minecraft:slime_superlaege",
             "minecraft:slime_calm"
           ]
         }
       },
-      "become_ultra": {
-		"run_command": {
-			"command": [
-				"execute @s[tag=has.target] ~~~ particle minecraft:large_explosion ~~~",
-				"execute @s[tag=has.target] ~~~ summon slime ~~0.3~ spawn_ultra",
-				"execute @s[tag=has.target] ~~~ event entity @s despawn_mode"
-			]
-		}
+      "become_superlarge": {
+        "run_command": {
+          "command": [
+            "execute @s[tag=has.target] ~~~ particle minecraft:large_explosion ~~~",
+            "execute @s[tag=has.target] ~~~ summon slime ~~0.3~ spawn_ultspawn_supermediumra",
+            "execute @s[tag=has.target] ~~~ event entity @s despawn_mode"
+          ]
+        }
       },
       "become_large": {
-		"run_command": {
-			"command": [
-				"execute @s[tag=has.target] ~~~ particle minecraft:large_explosion ~~~",
-				"execute @s[tag=has.target] ~~~ summon slime ~~0.3~ spawn_large",
-				"execute @s[tag=has.target] ~~~ event entity @s despawn_mode"
-			]
-		}
+        "run_command": {
+          "command": [
+            "execute @s[tag=has.target] ~~~ particle minecraft:large_explosion ~~~",
+            "execute @s[tag=has.target] ~~~ summon slime ~~0.3~ spawn_large",
+            "execute @s[tag=has.target] ~~~ event entity @s despawn_mode"
+          ]
+        }
       },
+      "become_supermedium": {
+        "run_command": {
+          "command": [
+            "execute @s[tag=has.target] ~~~ particle minecraft:large_explosion ~~~",
+            "execute @s[tag=has.target] ~~~ summon slime ~~0.3~ spawn_supermedium",
+            "execute @s[tag=has.target] ~~~ event entity @s despawn_mode"
+          ]
+        }
+      },
+	
 	
       "minecraft:become_calm": {
         "add": {
