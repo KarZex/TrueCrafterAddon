@@ -322,7 +322,7 @@
       "spawn_superlaege": {
         "add": {
           "component_groups": [
-            "minecraft:slime_superlaege",
+            "minecraft:slime_superlarge",
             "minecraft:slime_calm"
           ]
         }
@@ -331,7 +331,7 @@
         "run_command": {
           "command": [
             "execute @s[tag=has.target] ~~~ particle minecraft:large_explosion ~~~",
-            "execute @s[tag=has.target] ~~~ summon slime ~~0.3~ spawn_ultspawn_supermediumra",
+            "execute @s[tag=has.target] ~~~ summon slime ~~0.3~ spawn_superlaege",
             "execute @s[tag=has.target] ~~~ event entity @s despawn_mode"
           ]
         }
